@@ -1,19 +1,184 @@
 {
-  "rules": {
-    "no-console": 0,
-    "no-underscore-dangle": 0,
-    "no-unused-vars": ["error", { "argsIgnorePattern": "next" }],
-    "no-use-before-define": ["error", { "variables": false }],
-    "no-multi-str": 0
-  },
-  "env": {
-    "node": true,
-    "mocha": true
-  },
-  "parserOptions": {
-    "ecmaVersion": 8
-  },
-  "extends": [
-    "airbnb-base"
-  ]
+	"extends": [
+		"airbnb-base",
+		"prettier"
+	],
+	"plugins": [
+		"prettier"
+	],
+	"env": {
+		"node": true,
+		"mocha": true
+	},
+	"parserOptions": {
+		"ecmaVersion": 8
+	},
+	"globals": {
+		"Promise": true
+	},
+	"rules": {
+		"callback-return": [
+			"error",
+			[
+				"done",
+				"proceed",
+				"next",
+				"onwards",
+				"callback",
+				"cb"
+			]
+		],
+		"camelcase": [
+			"warn",
+			{
+				"properties": "always"
+			}
+		],
+		"comma-style": [
+			"warn",
+			"last"
+		],
+		"curly": [
+			"error"
+		],
+		"eqeqeq": [
+			"error",
+			"always"
+		],
+		"eol-last": [
+			"warn"
+		],
+		"handle-callback-err": [
+			"error"
+		],
+		"no-tabs": [
+			"error",
+			{
+				"allowIndentationTabs": true
+			}
+		],
+		"indent": [
+			"warn",
+			4,
+			{
+				"SwitchCase": 1,
+				"MemberExpression": "off",
+				"FunctionDeclaration": {
+					"body": 1,
+					"parameters": "off"
+				},
+				"FunctionExpression": {
+					"body": 1,
+					"parameters": "off"
+				},
+				"CallExpression": {
+					"arguments": "off"
+				},
+				"ArrayExpression": 1,
+				"ObjectExpression": 1,
+				"ignoredNodes": [
+					"ConditionalExpression"
+				]
+			}
+		],
+		"linebreak-style": [
+			"off",
+			"unix"
+		],
+		"no-console": 0,
+		"no-underscore-dangle": 0,
+		"no-multi-str": 0,
+		"no-dupe-keys": [
+			"error"
+		],
+		"no-duplicate-case": [
+			"error"
+		],
+		"no-extra-semi": [
+			"warn"
+		],
+		"no-labels": [
+			"error"
+		],
+		"no-mixed-spaces-and-tabs": [
+			"error",
+			"smart-tabs"
+		],
+		"no-redeclare": [
+			"warn"
+		],
+		"consistent-return": [
+			"off"
+		],
+		"no-return-assign": [
+			"error",
+			"always"
+		],
+		"no-return-await": [
+			"off"
+		],
+		"no-sequences": [
+			"error"
+		],
+		"no-trailing-spaces": [
+			"warn"
+		],
+		"no-undef": [
+			"error"
+		],
+		"no-unexpected-multiline": [
+			"warn"
+		],
+		"no-unreachable": [
+			"warn"
+		],
+		"func-names": "off",
+		"no-unused-vars": [
+			"warn",
+			{
+				"caughtErrors": "all",
+				"caughtErrorsIgnorePattern": "^unused($|[A-Z].*$)",
+				"argsIgnorePattern": "^unused($|[A-Z].*$)",
+				"varsIgnorePattern": "^unused($|[A-Z].*$)"
+			}
+		],
+		"no-use-before-define": [
+			"error",
+			{
+				"functions": false
+			}
+		],
+		"one-var": [
+			"warn",
+			"never"
+		],
+		"quotes": [
+			"warn",
+			"single",
+			{
+				"avoidEscape": false,
+				"allowTemplateLiterals": true
+			}
+		],
+		"semi": [
+			"error",
+			"always"
+		],
+		"semi-spacing": [
+			"warn",
+			{
+				"before": false,
+				"after": true
+			}
+		],
+		"semi-style": [
+			"warn",
+			"last"
+		],
+		"prettier/prettier": "error",
+		"max-len": [
+			"error",
+			80
+		]
+	}
 }
