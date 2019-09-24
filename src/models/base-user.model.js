@@ -11,7 +11,7 @@ const { env, jwtSecret, jwtExpirationInterval } = require('../config/vars');
 /**
  * User Roles
  */
-const roles = ['client', 'creator', 'admin'];
+const roles = ['user', 'admin'];
 
 /**
  * User Schema
@@ -39,14 +39,6 @@ const userSchema = new mongoose.Schema(
 			index: true,
 			trim: true
 		},
-		nickName: {
-			type: String,
-			trim: true,
-			required: true,
-			minlength: 5,
-			maxlength: 128,
-			unique: true
-		},
 		services: {
 			facebook: String,
 			google: String
@@ -54,35 +46,12 @@ const userSchema = new mongoose.Schema(
 		role: {
 			type: String,
 			enum: roles,
-			default: 'creator'
+			default: 'user'
 		},
 		picture: {
 			type: String,
 			trim: true
-		},
-		about: {
-			type: String,
-			trim: true,
-			maxlength: 200
-		},
-		phoneNumber: {
-			type: String,
-			trim: true,
-			minlength: 8,
-			unique: true
-		},
-		accountActivation: {
-			type: Boolean,
-			default: true //True means that the account is activated, to deactivate account, make it false
-		},
-		followers: [{
-			type: Schema.ObjectId,
-			ref: 'User'
-		}],
-		following: [{
-			type: Schema.ObjectId,
-			ref: 'User'
-		}]
+		}
 	},
 	{
 		timestamps: true
