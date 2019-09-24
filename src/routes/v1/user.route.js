@@ -32,7 +32,7 @@ router
 	 * @apiParam  {Number{1-100}}      [perPage=1]  Users per page
 	 * @apiParam  {String}             [name]       User's name
 	 * @apiParam  {String}             [email]      User's email
-	 * @apiParam  {String=user,admin}  [role]       User's role
+	 * @apiParam  {String=client,creator,admin}  [role]       User's role
 	 *
 	 * @apiSuccess {Object[]} users List of users.
 	 *
@@ -53,7 +53,7 @@ router
 	 * @apiParam  {String}             email     User's email
 	 * @apiParam  {String{6..128}}     password  User's password
 	 * @apiParam  {String{..128}}      [name]    User's name
-	 * @apiParam  {String=user,admin}  [role]    User's role
+	 * @apiParam  {String=client,creator,admin'}  [role]    User's role
 	 *
 	 * @apiSuccess (Created 201) {String}  id         User's id
 	 * @apiSuccess (Created 201) {String}  name       User's name
@@ -79,11 +79,19 @@ router
 	 *
 	 * @apiHeader {String} Authorization   User's access token
 	 *
-	 * @apiSuccess {String}  id         User's id
-	 * @apiSuccess {String}  name       User's name
-	 * @apiSuccess {String}  email      User's email
-	 * @apiSuccess {String}  role       User's role
-	 * @apiSuccess {Date}    createdAt  Timestamp
+	 * @apiSuccess {String}  id         		User's id
+	 * @apiSuccess {String}  name       		User's name
+	 * @apiSuccess {String}  email      		User's email
+	 * @apiSuccess {String}  role       		User's role
+	 * @apiSuccess {Date}    createdAt  		Timestamp
+	 * @apiSuccess  {String}   nickName   		User's nick name
+	 * @apiSuccess  {String}   services   		User's o-auth
+	 * @apiSuccess  {String}   picture    		User's picture url
+	 * @apiSuccess  {String}   about  				User's bio
+	 * @apiSuccess  {String}   phoneNumber 		User's phone Number
+	 * @apiSuccess  {Boolean}  accountActivation 	User's account activation info
+	 * @apiSuccess  {String[]} followers  		User's followers
+	 * @apiSuccess  {String[]} following  		User's followings
 	 *
 	 * @apiError (Unauthorized 401)  Unauthorized  Only authenticated Users can access the data
 	 */
@@ -101,11 +109,19 @@ router
 	 *
 	 * @apiHeader {String} Authorization   User's access token
 	 *
-	 * @apiSuccess {String}  id         User's id
-	 * @apiSuccess {String}  name       User's name
-	 * @apiSuccess {String}  email      User's email
-	 * @apiSuccess {String}  role       User's role
-	 * @apiSuccess {Date}    createdAt  Timestamp
+	 * @apiSuccess {String}  id         		User's id
+	 * @apiSuccess {String}  name       		User's name
+	 * @apiSuccess {String}  email      		User's email
+	 * @apiSuccess {String}  role       		User's role
+	 * @apiSuccess {Date}    createdAt  		Timestamp
+	 * @apiSuccess  {String}   nickName   		User's nick name
+	 * @apiSuccess  {String}   services   		User's o-auth
+	 * @apiSuccess  {String}   picture    		User's picture url
+	 * @apiSuccess  {String}   about  				User's bio
+	 * @apiSuccess  {String}   phoneNumber 		User's phone Number
+	 * @apiSuccess  {Boolean}  accountActivation 	User's account activation info
+	 * @apiSuccess  {String[]} followers  		User's followers
+	 * @apiSuccess  {String[]} following  		User's followings
 	 *
 	 * @apiError (Unauthorized 401) Unauthorized Only authenticated users can access the data
 	 * @apiError (Forbidden 403)    Forbidden    Only user with same id or admins can access the data
@@ -125,14 +141,22 @@ router
 	 * @apiParam  {String}             email     User's email
 	 * @apiParam  {String{6..128}}     password  User's password
 	 * @apiParam  {String{..128}}      [name]    User's name
-	 * @apiParam  {String=user,admin}  [role]    User's role
+	 * @apiParam  {String=client,creator,admin}  [role]    User's role
 	 * (You must be an admin to change the user's role)
 	 *
-	 * @apiSuccess {String}  id         User's id
-	 * @apiSuccess {String}  name       User's name
-	 * @apiSuccess {String}  email      User's email
-	 * @apiSuccess {String}  role       User's role
-	 * @apiSuccess {Date}    createdAt  Timestamp
+	 * @apiSuccess {String}  id         		User's id
+	 * @apiSuccess {String}  name       		User's name
+	 * @apiSuccess {String}  email      		User's email
+	 * @apiSuccess {String}  role       		User's role
+	 * @apiSuccess {Date}    createdAt  		Timestamp
+	 * @apiSuccess  {String}   nickName   		User's nick name
+	 * @apiSuccess  {String}   services   		User's o-auth
+	 * @apiSuccess  {String}   picture    		User's picture url
+	 * @apiSuccess  {String}   about  				User's bio
+	 * @apiSuccess  {String}   phoneNumber 		User's phone Number
+	 * @apiSuccess  {Boolean}  accountActivation 	User's account activation info
+	 * @apiSuccess  {String[]} followers  		User's followers
+	 * @apiSuccess  {String[]} following  		User's followings
 	 *
 	 * @apiError (Bad Request 400)  ValidationError  Some parameters may contain invalid values
 	 * @apiError (Unauthorized 401) Unauthorized Only authenticated users can modify the data
@@ -153,14 +177,22 @@ router
 	 * @apiParam  {String}             email     User's email
 	 * @apiParam  {String{6..128}}     password  User's password
 	 * @apiParam  {String{..128}}      [name]    User's name
-	 * @apiParam  {String=user,admin}  [role]    User's role
+	 * @apiParam  {String=client,creator,admin}  [role]    User's role
 	 * (You must be an admin to change the user's role)
 	 *
-	 * @apiSuccess {String}  id         User's id
-	 * @apiSuccess {String}  name       User's name
-	 * @apiSuccess {String}  email      User's email
-	 * @apiSuccess {String}  role       User's role
-	 * @apiSuccess {Date}    createdAt  Timestamp
+	 * @apiSuccess {String}  id         		User's id
+	 * @apiSuccess {String}  name       		User's name
+	 * @apiSuccess {String}  email      		User's email
+	 * @apiSuccess {String}  role       		User's role
+	 * @apiSuccess {Date}    createdAt  		Timestamp
+	 * @apiSuccess  {String}   nickName   		User's nick name
+	 * @apiSuccess  {String}   services   		User's o-auth
+	 * @apiSuccess  {String}   picture    		User's picture url
+	 * @apiSuccess  {String}   about  				User's bio
+	 * @apiSuccess  {String}   phoneNumber 		User's phone Number
+	 * @apiSuccess  {Boolean}  accountActivation 	User's account activation info
+	 * @apiSuccess  {String[]} followers  		User's followers
+	 * @apiSuccess  {String[]} following  		User's followings
 	 *
 	 * @apiError (Bad Request 400)  ValidationError  Some parameters may contain invalid values
 	 * @apiError (Unauthorized 401) Unauthorized Only authenticated users can modify the data

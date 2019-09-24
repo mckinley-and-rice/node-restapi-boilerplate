@@ -49,7 +49,9 @@ const userSchema = new mongoose.Schema(
 		},
 		services: {
 			facebook: String,
-			google: String
+			google: String,
+			talk: String,
+			kakao: String
 		},
 		role: {
 			type: String,
@@ -76,11 +78,11 @@ const userSchema = new mongoose.Schema(
 			default: true //True means that the account is activated, to deactivate account, make it false
 		},
 		followers: [{
-			type: Schema.ObjectId,
+			type: mongoose.Schema.ObjectId,
 			ref: 'User'
 		}],
 		following: [{
-			type: Schema.ObjectId,
+			type: mongoose.Schema.ObjectId,
 			ref: 'User'
 		}]
 	},
