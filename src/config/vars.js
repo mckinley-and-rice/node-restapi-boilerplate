@@ -1,5 +1,7 @@
 const path = require('path');
 
+const config = require('../../config.json');
+
 // import .env variables
 require('dotenv-safe').config({
   path: path.join(__dirname, '../../.env'),
@@ -7,14 +9,14 @@ require('dotenv-safe').config({
 });
 
 module.exports = {
-  env: process.env.NODE_ENV,
-  port: process.env.PORT,
-  jwtSecret: process.env.JWT_SECRET,
-  jwtExpirationInterval: process.env.JWT_EXPIRATION_MINUTES,
+  env: config.NODE_ENV,
+  port: config.PORT,
+  jwtSecret: config.JWT_SECRET,
+  jwtExpirationInterval: config.JWT_EXPIRATION_MINUTES,
   mongo: {
-    uri: process.env.NODE_ENV === 'test'
-      ? process.env.MONGO_URI_TESTS
-      : process.env.MONGO_URI,
+    uri: config.NODE_ENV === 'test'
+      ? config.MONGO_URI_TESTS
+      : config.MONGO_URI,
   },
-  logs: process.env.NODE_ENV === 'production' ? 'combined' : 'dev',
+  logs: config.NODE_ENV === 'production' ? 'combined' : 'dev',
 };
