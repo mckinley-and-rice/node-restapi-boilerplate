@@ -2,7 +2,7 @@
 
 [![Build Status](https://api.travis-ci.com/mckinley-and-rice/seers-node-api.svg?token=zpzxpp5sTyrL2Zc9qQ6m&branch=master)](https://travis-ci.org/mckinley-and-rice/Seers-api.)
 
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![Greenkeeper badge](https://badges.greenkeeper.io/mckinley-and-rice/node-restapi-boilerplate.svg?token=8476943f082208e8e6f3ef88569a66aba756837a1d058b3fda9d81e1273e2908&ts=1577115834863)](https://greenkeeper.io/)
 
 ## Installation
 **With [node](http://nodejs.org) [installed](http://nodejs.org/en/download):**
