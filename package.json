@@ -85,6 +85,8 @@
     "passport-http-bearer": "^1.0.1",
     "passport-jwt": "4.0.0",
     "pm2": "^3.5.1",
+    "seed": "^0.4.4",
+    "seed-mongodb": "^0.6.0",
     "uuid": "^3.3.3",
     "winston": "^3.2.1"
   },
